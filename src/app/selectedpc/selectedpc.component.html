@@ -1,0 +1,36 @@
+<br><br>
+<div class="container">
+<h4 style="color:teal;">Détail pc</h4>
+<style>
+.custab{
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 5% 0;
+    box-shadow: 3px 3px 2px #ccc;
+    transition: 0.5s;
+    }
+.custab:hover{
+    box-shadow: 3px 3px 0px transparent;
+    transition: 0.5s;
+    }
+
+</style>
+<div class="container">
+    <div class="row col-md-6 col-md-offset-2 custyle">
+    <table class="table table-striped custab">
+    <thead>
+
+    <tr><th>libelle</th>
+        <th>type</th>
+        <th>quantity</th>
+        <th>date fabrication</th></tr>
+     <tr><td>{{pc.libelle}}</td>    
+<td>{{pc.type}}</td>
+<td>{{pc.quantity}}</td>
+<td>{{pc.date_fabrication| date: 'yyyy MM'}}</td></tr>   
+</thead>
+    </table>
+    
+</div>
+    <button class="btn btn-primary" (click)="onRetour()">Retour</button>
+</div>

@@ -1,0 +1,91 @@
+
+
+<app-menu></app-menu>
+<br>
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<div class="span3" style="margin-left: 500px;">
+    <h3 style="color:teal;"> Formulaire d'ajout pc</h3>
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm" >
+        
+    <label>libelle du pc</label>
+    <input type="text" id="libelle" name="lib"
+    [(ngModel)]="libelle" class="form-control" required pattern="[A-Z][a-zA-Z]+"#lib="ngModel">
+    <label>marque du pc</label>
+    <input type="text" id="marque" name="marque"
+    [(ngModel)]="marque" class="form-control" required pattern="[A-Z][a-zA-Z]+"#lib="ngModel">
+    <label>L'image</label>
+    <input type="text" [(ngModel)]="image" name="image" class="span3">
+    <label for="id">type</label>
+   <select  id="type" [(ngModel)]="type" name="type" class="span3">
+<option value="laptop">laptop</option>
+<option value="gaming_pc">gaming_pc</option>
+<option value="accessoir">accessoir</option>
+</select>
+    <label>Prix</label>
+    <input required type="number" [(ngModel)]="prix" name="prix" class="span3">
+   <label>quantity</label>
+    <input required type="number" [(ngModel)]="quantity" name="quantity" class="span3">
+    
+       <label>date_fabrication</label>
+    <input required type="date" [(ngModel)]="date_fabrication" name="date_fabrication" class="span3">
+    stock:<input type="checkbox" [(ngModel)]="stock" class="span3">
+    <br>
+    <div>
+    <input type="reset" value="Vider" class="btn btn-danger">
+    &nbsp;
+    <button class="btn btn-primary" (click)="onRetour()">Retour</button>
+    <input type="submit" value="Enregistrer" class="btn btn-primary pull-right" [disabled]="f.invalid" >
+</div>
+
+    <div class="clearfix"></div>
+    </form>
+</div>
+    
+<!--
+
+<br/>
+<h3>Ajout d'un produit</h3>
+
+<div class="container">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="form-group">
+            <label for="id">
+                Identifiant du produit
+            </label>
+            <input type="number" id="id" name="id" [(ngModel)]="identifiant"  class="form-control" required #identif="ngModel" >
+        </div>
+        <div *ngIf="identif.invalid && identif.dirty" class="alert alert-danger">
+            L'identifiant doit être un nombre
+        </div>
+        <!--{{identif.className}}-->
+<!--        <div class="form-group">
+            <label for="libelle">
+                 Libellé du produit
+            </label>
+            <input type="text" id="libelle" name="lib"
+             [(ngModel)]="libelle" class="form-control" required
+                pattern="[A-Z][a-zA-Z]+"
+             #lib="ngModel">
+            </div>
+
+            <div *ngIf="lib.errors?.pattern && lib.dirty" class="alert alert-danger">
+                Le libellé doit commencer par une majuscule suivie d'au moins 1 caractère 
+            </div>
+        <div [hidden]="!lib.errors?.required || lib.pristine" class="alert alert-danger">
+            Le libellé est un champ obligatoire
+        </div>
+
+           <br/>   
+     
+        <button type="submit" class="btn btn-success" [disabled]="f.invalid">Enregistrer</button>
+        <input type="reset" class="btn btn-danger" (click)="f.reset();submitted=false;" value="Vider"/>
+        <div [hidden] ="!submitted">
+            {{message}}
+        </div>
+
+    </form>
+
+</div>
+-->

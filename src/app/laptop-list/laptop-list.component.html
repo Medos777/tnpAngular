@@ -1,0 +1,59 @@
+
+<app-menu></app-menu>
+<br><br>
+<br><br>
+<br><br>
+
+<div class="container">
+		<div class="md-form mt-0" >
+				<input class="form-control" type="text" placeholder="Search......." [(ngModel)]="filter">        
+				
+			  </div>
+  
+<div class="col-md-2 column productbox" *ngFor="let e of pcs|filter:filter| paginate: { itemsPerPage: 3, currentPage: p }">
+		<img  [src]="e.image" class="img-responsive" style="width: 350px; height:300px;">
+		<div class="producttitle"> {{e.libelle}}</div>
+		<div class="producttitle">{{e.type}}</div>
+		Date Fabrication:<br>
+		{{e.date_fabrication | date: 'yyyy MM dd'}} 
+		<div class="col-md-2 column productbox"> 
+		<button  (click)="modif(prix)" class="btn btn-danger btn-sm" role="button">prix après remise</button>
+		<div class="productprice">{{e.prix}} TNT</div>
+		<button class="btn btn-primary" [routerLink]="['/SelectedPc',e._id]">Infos</button>
+		</div>
+		
+
+</div>
+
+<br>
+<ul class="pagination">  
+			<pagination-controls (pageChange)="p = $event"></pagination-controls>  
+			</ul> 
+			</div>
+
+	<style>
+   .productbox {
+    background-color:#ffffff;
+	padding:10px;
+	margin-bottom:10px;
+	-webkit-box-shadow: 0 8px 6px -6px  #999;
+	   -moz-box-shadow: 0 8px 6px -6px  #999;
+	        box-shadow: 0 8px 6px -6px #999;
+}
+
+.producttitle {
+    font-weight:bold;
+	padding:5px 0 5px 0;
+}
+
+.productprice {
+	border-top:1px solid #dadada;
+	padding-top:5px;
+}
+
+.pricetext {
+	font-weight:bold;
+	font-size:1.4em;
+}
+</style>
+  
