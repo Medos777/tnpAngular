@@ -8,6 +8,7 @@ import { AjoutLaptopComponent } from './ajout-laptop/ajout-laptop.component';
 import { SelectedpcComponent } from './selectedpc/selectedpc.component';
 import { DeletePcComponent } from './delete-pc/delete-pc.component';
 import { ModifComponent } from './modif/modif.component';  
+import { FooterComponent } from './footer/footer.component';   
 const routes: Routes = [
   {path:'myMenu', component:MenuComponent}, 
   {path:'Login', component:LoginComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
 {path:'SelectedPc/:id', component:SelectedpcComponent},
   {path:'AjoutLaptop', component:AjoutLaptopComponent},
   {path:'Modif',component:ModifComponent},
+  {path:'Footer',component:FooterComponent},
   {path:'', redirectTo:'Login', pathMatch:'full'},
   {path:'**', component:Error404Component} 
   

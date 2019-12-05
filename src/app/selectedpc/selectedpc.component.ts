@@ -12,8 +12,8 @@ import { Pc } from '../pc';
 })
 export class SelectedpcComponent implements OnInit {
    pc: Pc
-  constructor(private activatedRouter:ActivatedRoute, private LaptopService:LaptopService ,
-  private router:Router)   { }
+   constructor(private activatedRouter:ActivatedRoute, private LaptopService:LaptopService ,
+    private router:Router)   { }
   ngOnInit() {
     let id= Number(this.activatedRouter.snapshot.params['id']);
     this.pc= this.LaptopService.getPcByid(id);

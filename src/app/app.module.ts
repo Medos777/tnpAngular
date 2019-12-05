@@ -13,7 +13,8 @@ import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { DeletePcComponent } from './delete-pc/delete-pc.component';
 import {NgxPaginationModule} from 'ngx-pagination';  
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { ModifComponent } from './modif/modif.component';   
+import { ModifComponent } from './modif/modif.component';
+import { FooterComponent } from './footer/footer.component';   
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ModifComponent } from './modif/modif.component';
     AjoutLaptopComponent,
     SelectedpcComponent,
     DeletePcComponent,
-    ModifComponent
+    ModifComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
