@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { LaptopService} from '../Laptop.Service';
+import { LaptopService} from '../Laptop.service';
 import { Pc } from '../pc';
 
 @Component({

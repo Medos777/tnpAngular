@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LaptopService } from '../Laptop.Service';
+import { LaptopService } from '../Laptop.service';
 import { Router } from '@angular/router';
 import { NgForm,FormBuilder, FormGroup, Validators } from '@angular/forms';
 
